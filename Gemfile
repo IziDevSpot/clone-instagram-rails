@@ -13,13 +13,6 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 
 
-#CHANGED
-gem 'devise'
-gem 'dotenv-rails', :groups => [:development, :test]
-gem 'rerun', :groups => [:development, :test]
-gem 'populator', :groups => [:development, :test]
-gem 'faker', :groups => [:development, :test]
-
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
@@ -35,3 +28,47 @@ group :development do
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# ###########################
+#CHANGED
+# ###########################
+
+# ### ### ### ###
+# Authentication
+# ### ### ### ###
+gem 'devise', '~> 4.2'
+
+# ### ### ### ###
+# Configuration
+# ### ### ### ###
+
+# Environmental variables
+gem 'dotenv-rails', :groups => [:development, :test]
+# Server Watcher
+gem 'rerun', :groups => [:development, :test]
+#
+
+# ### ### ### ###
+# Testing
+# ### ### ### ###
+
+# Populate fake test data
+gem 'populator', :groups => [:development, :test]
+# Populate fake test data
+gem 'faker', :groups => [:development, :test]
+
+# ### ### ### ###
+#Views
+# ### ### ### ###
+
+# Simplified forms
+gem 'simple_form', '~> 3.2', '>= 3.2.1'
+# HAML template engine
+gem 'haml-rails', '~> 0.9.0'
+# Bootstrap templates
+gem 'bootstrap', '~> 4.0.0.alpha3.1'
+# Easily include static pages https://github.com/thoughtbot/high_voltage
+gem 'high_voltage'
+# Convert existing .erb to .haml
+gem 'erb2haml', :groups => [:development]
+
