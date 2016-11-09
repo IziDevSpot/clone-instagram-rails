@@ -20,8 +20,7 @@
     #errors
       %h2
       = pluralize(@pic.errors.count, "error")
-      prevented this Pic from saving.
-      
+      prevented this Pic from saving.    
       %ul
         - @pic.errors.full_messages.each do |message|
           %li= message
