@@ -4,6 +4,11 @@ This is a prototype aimed at teaching developers a few fundamentals of Instagram
 
 # Getting Started
 
+## Step 0
+
+```language-powerbash
+bundle install --full-index
+```
 
 
 ## Step 1
