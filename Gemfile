@@ -64,7 +64,7 @@ gem 'faker', :groups => [:development, :test]
 gem 'simple_form', '~> 3.2', '>= 3.2.1'
 # HAML template engine
 gem 'haml-rails', '~> 0.9.0'
-# Bootstrap templates
+# Bootstrap templates https://github.com/twbs/bootstrap-rubygem
 gem 'bootstrap', '~> 4.0.0.alpha3.1'
 # Easily include static pages https://github.com/thoughtbot/high_voltage
 gem 'high_voltage'

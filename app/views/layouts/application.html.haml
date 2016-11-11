@@ -1,17 +1,31 @@
 !!!
 %html
   %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %title InstaRails
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
+
+    #navbar-header.collapse.in{"aria-expanded" => "true"}
+      .container-fluid.p-1
+        %h3= link_to "Instaclone", root_path
+        - if user_signed_in?
+          %ul.nav.navbar-nav.navbar-left
+            %li= link_to "Gram it!", new_pic_path
+            %li= link_to "Settings", edit_user_registration_path
+            %li= link_to "Sign Out", destroy_user_session_path, method: :delete
+        - else
+          %ul.nav.navbar-nav.navbar-left
+            %li= link_to "Join", new_user_registration_path
+            %li= link_to "Log In", new_user_session_path
+        
+    .navbar.navbar-light.bg-faded.navbar-static-top.mb-1
+      %button.navbar-toggler{"aria-controls" => "navbar-header", "aria-expanded" => "true", "aria-label" => "Toggle navigation", "data-target" => "#navbar-header", "data-toggle" => "collapse", :type => "button"}
+
+    .container
+      - flash.each do |name, msg|
+        =content_tag :div, msg, class: "alert alert-info"
   
-    %p.notice=notice
-    %p.alert= alert
-	
-    - flash.each do |name, msg|
-      =content_tag :div, msg, class: "alert alert-info"
-  
-    = yield
+      = yield
