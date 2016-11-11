@@ -1,14 +1,22 @@
 /%p#notice= notice
 
-= image_tag @pic.image.url(:medium)
-
-%p
-  %b Title:
-  = @pic.title
-%p
-  %b Description:
-  = @pic.description
-
-= link_to 'Edit', edit_pic_path(@pic)
-\|
-= link_to 'Back', pics_path
+#pic_show.row
+  .col-md-6.col-md-offset-3
+    .panel.panel-default
+      .panel.heading.pic_image
+      = image_tag @pic.image.url(:medium)
+      .panel-body
+        = @pic.title
+        = @pic.description
+      .panel-footer
+        .row
+          .col-md-6
+            %p.user
+            %b by
+            = @pic.user.email
+          .col.md-6
+            .btn-group.pull-right
+              - if user_signed_in?
+                = link_to 'Edit', edit_pic_path(@pic), class: "btn btn-info"
+                = link_to 'Back', pics_path, class: "btn btn-info"
+                = link_to 'Delete', pic_path, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger"

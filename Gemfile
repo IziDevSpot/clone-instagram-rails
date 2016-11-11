@@ -72,3 +72,7 @@ gem 'high_voltage'
 gem 'erb2haml', :groups => [:development]
 # Image uploads
 gem "paperclip", "~> 5.0.0"
+# jQuery will help us style the page
+gem "masonry-rails", "~> 0.2.1"
+
+
