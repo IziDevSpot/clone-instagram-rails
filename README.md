@@ -160,3 +160,8 @@ rails g migration add_user_id_to_pics user_id:index
 ### Step 7 - 
 
 
+
+
+# Resources
+
+- [Seed Data Examples](https://github.com/chrisjmendez/rails-5-cheatsheet/blob/master/db/seed_data/01_user.rb)
