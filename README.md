@@ -157,7 +157,7 @@ rails g migration add_user_id_to_pics user_id:index
 
 
 
-### Step 7 - 
+### Step 7 - Style your app
 
 Add this bootstrap stuff to ```app/assets/stylesheets/application.scss```
 ```language-css
@@ -165,6 +165,25 @@ Add this bootstrap stuff to ```app/assets/stylesheets/application.scss```
 @import "bootstrap";
 ```
 
+The easiest way to style your app is to vist the [Twitter Bootstrap](http://v4-alpha.getbootstrap.com/examples/) page and find an exmple you want to copy.
+
+Once you find a template you like, go to ```Inspect```, copy the HTML and paste it into the [HTML to HAML](http://htmltohaml.com/) converter.
+
+
+
+### Step 8 - Add Images
+
+The most popular rails gem for adding images is ```paperclip```.
+
+You'll need this to render images.
+```language-powerbash
+brew install imagemagick
+```
+
+Ghostscript is important if you want to upload PDF files.
+```language-powerbash
+brew install gs
+```
 
 
 # Resources

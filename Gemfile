@@ -70,3 +70,5 @@ gem 'bootstrap', '~> 4.0.0.alpha3.1'
 gem 'high_voltage'
 # Convert existing .erb to .haml
 gem 'erb2haml', :groups => [:development]
+# Image uploads
+gem "paperclip", "~> 5.0.0"
