@@ -1,5 +1,10 @@
-%h1 New pic
+.col-md-8.col.md-offset-2
+  .row
+    .panel.panel-default
+      .panel-heading
+        %h1 Post Pic
+      .panel-body
+        =render 'form'
+        %br
+        = link_to 'Back', pics_path
 
-= render 'form'
-
-= link_to 'Back', pics_path

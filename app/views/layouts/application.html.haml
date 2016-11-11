@@ -8,21 +8,28 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
 
-    #navbar-header.collapse.in{"aria-expanded" => "true"}
-      .container-fluid.p-1
-        %h3= link_to "Instaclone", root_path
+    %nav.navbar.navbar-light.bg-faded
+      %button.navbar-toggler.hidden-sm-up{"aria-controls" => "navbar-header", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbar-header", "data-toggle" => "collapse", :type => "button"}
+      #navbar-header.collapse.navbar-toggleable-xs
+        %a.navbar-brand{:href => root_path} InstaRails
+
         - if user_signed_in?
           %ul.nav.navbar-nav.navbar-left
-            %li= link_to "Gram it!", new_pic_path
-            %li= link_to "Settings", edit_user_registration_path
-            %li= link_to "Sign Out", destroy_user_session_path, method: :delete
+            %li.nav-item= link_to "+ New Pic", new_pic_path, class: "btn"
+      
+        - if user_signed_in?
+          %ul.nav.navbar-nav.float-xs-right
+            %li.nav-item= link_to "Settings", edit_user_registration_path, class: "nav-link"
+            %li.nav-item= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "nav-link"
         - else
-          %ul.nav.navbar-nav.navbar-left
-            %li= link_to "Join", new_user_registration_path
-            %li= link_to "Log In", new_user_session_path
-        
-    .navbar.navbar-light.bg-faded.navbar-static-top.mb-1
-      %button.navbar-toggler{"aria-controls" => "navbar-header", "aria-expanded" => "true", "aria-label" => "Toggle navigation", "data-target" => "#navbar-header", "data-toggle" => "collapse", :type => "button"}
+          %ul.nav.navbar-nav.float-xs-right
+            %li.nav-item= link_to "Join", new_user_registration_path, class: "nav-link"
+            %li.nav-item= link_to "Log In", new_user_session_path, class: "nav-link"
+
+      
+        %form.form-inline.float-xs-right
+          /%input.form-control{:placeholder => "Search", :type => "text"}/
+          /%button.btn.btn-outline-success{:type => "submit"} Search
 
     .container
       - flash.each do |name, msg|

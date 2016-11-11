@@ -170,4 +170,4 @@ Add this bootstrap stuff to ```app/assets/stylesheets/application.scss```
 # Resources
 
 - [Seed Data Examples](https://github.com/chrisjmendez/rails-5-cheatsheet/blob/master/db/seed_data/01_user.rb)
-
+- [Convert HTML to HAML](http://htmltohaml.com/)
