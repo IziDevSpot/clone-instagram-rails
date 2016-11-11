@@ -152,7 +152,7 @@ rails g devise User
 
 Associate devise's User to a specific Pic.
 ```language-powerbash
-rails g migration add_user_id_to_pics user_id:integer
+rails g migration add_user_id_to_pics user_id:index
 ```
 
 
