@@ -12,6 +12,7 @@
   %tbody
     - @pics.each do |pic|
       %tr
+        %td= link_to (image_tag pic.image.url(:thumb)), pic
         %td= pic.title
         %td= pic.description
         %td= link_to 'Show', pic

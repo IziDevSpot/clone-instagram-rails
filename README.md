@@ -185,8 +185,14 @@ Ghostscript is important if you want to upload PDF files.
 brew install gs
 ```
 
+Then add ```gem paperclip``` and follow these [Quickstart instructions](https://github.com/thoughtbot/paperclip#quick-start).
+
+```language-powerbash
+rails g paperclip pic image
+```
 
 # Resources
 
 - [Seed Data Examples](https://github.com/chrisjmendez/rails-5-cheatsheet/blob/master/db/seed_data/01_user.rb)
 - [Convert HTML to HAML](http://htmltohaml.com/)
+

@@ -5,7 +5,8 @@ namespace :app do
     #We're skipping turbo links becuase we want to use our own View solution (aka React)
     sh %{ rails _5.0.0_ new clone-instagram-rails --force -d postgresql --skip-turbolinks }
     sh %{ rake db:create }
-    sh %{  }
+    # Add Paperclip
+    sh %{ rails g paperclip pic image }
     sh %{  }
     sh %{  }
     sh %{  }
