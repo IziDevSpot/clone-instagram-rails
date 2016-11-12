@@ -7,7 +7,8 @@ namespace :app do
     sh %{ rake db:create }
     # Add Paperclip
     sh %{ rails g paperclip pic image }
-    sh %{  }
+    # Add an aditional column to the table in order to offer likes
+    sh %{ rails g acts_as_votable:migration }
     sh %{  }
     sh %{  }
     sh %{  }

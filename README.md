@@ -191,6 +191,68 @@ Then add ```gem paperclip``` and follow these [Quickstart instructions](https://
 rails g paperclip pic image
 ```
 
+---
+
+
+## Step 9 - Add Liking
+
+Follow [these gem instructions](http://www.mattmorgante.com/technology/votable).
+
+Add this ```models/pic.rb```.
+
+```language-ruby
+class Pic < ActiveRecord::Base
+  ...
+  acts_as_votable
+end
+```
+
+
+Add this to ```config/routes.rb```
+```language-ruby
+Rails.application.routes.draw do
+  ...
+  resources :pics do |p|
+    member do
+      put "like", to: "pic#upvote"
+    end    
+  end
+end
+```
+
+
+Add this to ```controllers/pics_controller.rb```.
+```language-ruby
+class PicsController < ApplicationController
+  # Add upvote as a before action that requires :set_pic
+  before_action :set_pic, only: [..., :upvote, :downvote]
+  
+  # Restrict user behavior by only allowing for :index and :show to appear
+  before_action :authenticate_user!, except: [:index, :show]
+```
+
+
+Add this to ```controllers/pics_controller.rb```.
+
+```language-ruby
+  # ################
+  # acts_as_votable
+  # ################
+  #Once you update, redirect back to the show page
+  def upvote
+    @pic.upvote_by current_user
+    redirect_to :back
+  end
+
+  def downvote
+    @pic.downvote_by current_user
+    redirect_to :back
+  end
+```
+
+---
+
+
 # Resources
 
 - [Seed Data Examples](https://github.com/chrisjmendez/rails-5-cheatsheet/blob/master/db/seed_data/01_user.rb)

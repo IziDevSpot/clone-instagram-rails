@@ -1,12 +1,15 @@
 class PicsController < ApplicationController
-  before_action :set_pic, only: [:show, :edit, :update, :destroy]
+  before_action :set_pic, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
+  
+  # Restrict user behavior by only allowing for :index and :show to appear
+  before_action :authenticate_user!, except: [:index, :show]
 
   # GET /pics
   # GET /pics.json
   def index
     @pics = Pic.all
   end
-
+  
   # GET /pics/1
   # GET /pics/1.json
   def show
@@ -60,6 +63,20 @@ class PicsController < ApplicationController
       format.html { redirect_to pics_url, notice: 'Pic was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+  
+  # ################
+  # acts_as_votable
+  # ################
+  #Once you update, redirect back to the show page
+  def upvote
+    @pic.upvote_by current_user
+    redirect_to :back
+  end
+
+  def downvote
+    @pic.downvote_by current_user
+    redirect_to :back
   end
 
   private

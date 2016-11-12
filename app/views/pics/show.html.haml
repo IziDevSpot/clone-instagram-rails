@@ -16,7 +16,14 @@
             = @pic.user.email
           .col.md-6
             .btn-group.pull-right
+              = link_to like_pic_path(@pic), method: :put, class: "btn btn-default" do
+                %i.fa.fa-thumbs-o-up.fa-5{"aria-hidden" => "true"}
+                = @pic.get_upvotes.size
+              -#= link_to dislike_pick_path(@pic), method: :put do
+              -#  Downvote
+              -#  \#{pic.get_downvotes.size}            
+            
               - if user_signed_in?
+                = link_to 'Back', pics_path, class: "btn btn-default"
                 = link_to 'Edit', edit_pic_path(@pic), class: "btn btn-info"
-                = link_to 'Back', pics_path, class: "btn btn-info"
                 = link_to 'Delete', pic_path, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger"

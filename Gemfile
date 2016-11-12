@@ -74,5 +74,7 @@ gem 'erb2haml', :groups => [:development]
 gem "paperclip", "~> 5.0.0"
 # jQuery will help us style the page
 gem "masonry-rails", "~> 0.2.1"
-
-
+#Vote up photos
+gem 'acts_as_votable', '~> 0.10.0'
+# Font Awesome SASS
+gem 'font-awesome-sass'

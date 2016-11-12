@@ -27,9 +27,9 @@
             %li.nav-item= link_to "Log In", new_user_session_path, class: "nav-link"
 
       
-        %form.form-inline.float-xs-right
-          /%input.form-control{:placeholder => "Search", :type => "text"}/
-          /%button.btn.btn-outline-success{:type => "submit"} Search
+        -#%form.form-inline.float-xs-right
+        -#  %input.form-control{:placeholder => "Search", :type => "text"}/
+        -#  %button.btn.btn-outline-success{:type => "submit"} Search
 
     .container
       - flash.each do |name, msg|

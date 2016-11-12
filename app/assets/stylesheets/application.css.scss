@@ -11,11 +11,13 @@
  * It is generally better to create a new file per style scope.
  *
  *= require 'masonry/transitions'
+
  */
 
 //CHANGED
 @import "bootstrap";
-
+@import "font-awesome-sprockets";
+@import "font-awesome";
 
 #edit_page{
   .current_image{
