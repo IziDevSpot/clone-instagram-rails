@@ -66,6 +66,10 @@ gem 'simple_form', '~> 3.2', '>= 3.2.1'
 gem 'haml-rails', '~> 0.9.0'
 # Bootstrap templates https://github.com/twbs/bootstrap-rubygem
 gem 'bootstrap', '~> 4.0.0.alpha3.1'
+# You need tether
+source 'https://rails-assets.org' do
+  gem 'rails-assets-tether', '>= 1.1.0'
+end
 # Easily include static pages https://github.com/thoughtbot/high_voltage
 gem 'high_voltage'
 # Convert existing .erb to .haml

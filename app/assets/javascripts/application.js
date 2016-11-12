@@ -16,5 +16,6 @@
 //= require_tree .
 
 //CHANGED
+//= require tether
 //= require bootstrap-sprockets
 //= require masonry/jquery.masonry
