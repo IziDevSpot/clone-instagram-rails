@@ -2,6 +2,8 @@
 
 This is a prototype aimed at teaching developers a few fundamentals of Instagram.  This is not production-ready and will not be able to scale 100M users. If you're looking for a scalable solution, I suggest looking into [Phoenix Framework](http://www.phoenixframework.org/) or an  [Erlang Framework](https://github.com/ChicagoBoss/ChicagoBoss/wiki/Comparison-of-Erlang-Web-Frameworks).
 
+---
+
 # Getting Started
 
 ## Step 0
@@ -10,6 +12,7 @@ This is a prototype aimed at teaching developers a few fundamentals of Instagram
 bundle install --full-index
 ```
 
+---
 
 ## Step 1
 
@@ -18,12 +21,13 @@ Create a new Rails 5.0 application with a Postgres DB.
 rails _5.0.0_ new clone-instagram-rails -d postgresql
 ```
 
-
+---
 
 ## Step 2
 
 Review the Gemfile to see which libraries we are using.
 
+---
 
 ### Step 3
 
@@ -40,6 +44,7 @@ Add this to ```config/application.rb```. This will tell rails to autogenerate .h
   end
 ```
 
+---
 
 ### Step 4 - Convert existing .erb to .haml
 
@@ -55,6 +60,8 @@ Replace .erb files
 rails haml:replace_erbs
 ```
 
+---
+
 
 ### Step 5 - Simple Form
 
@@ -63,6 +70,7 @@ Run this command to complete the ```simple_form``` gem install. This will connec
 rails g simple_form:install --bootstrap
 ```
 
+---
 
 
 ### Step 6 - Create a Model, Controller and Views through Scaffold
@@ -90,6 +98,7 @@ Rails.application.routes.draw do
 end
 ```
 
+---
 
 ### Step 6 - Install Devise
 
@@ -113,7 +122,7 @@ Associate devise's User to a specific Pic.
 rails g migration add_user_id_to_pics user_id:index
 ```
 
-
+---
 
 ### Step 7 - Style your app
 
@@ -127,7 +136,7 @@ The easiest way to style your app is to vist the [Twitter Bootstrap](http://v4-a
 
 Once you find a template you like, go to ```Inspect```, copy the HTML and paste it into the [HTML to HAML](http://htmltohaml.com/) converter.
 
-
+---
 
 ### Step 8 - Add Images
 
